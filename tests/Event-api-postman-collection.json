@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "b82c18ef-9049-49d6-89fb-a32ea7802bd0",
+		"name": "Event api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Readyness check",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "dd",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "dd",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:8443/api/isready",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"isready"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create event",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"eventId\":\"c1413b13-7902-46f8-941d-b2e4a307fa55\",\"eventType\":\"BIRTHDAY\",\"eventTitle\":\"fakeevent1\",\"eventWishlists\":[\"f413d5c4-33a8-48a8-a064-a34e937a51e5\",\"0935cdc7-4d34-4185-83ec-5ab786dd7130\"],\"eventForPerson\":\"fakedhaval1\",\"eventLocationAddress\":{\"addrNameOrNumber\":\"fakeaddress1\",\"addrStreetOrLocality\":null,\"addrLandMark\":null,\"addrCity\":null,\"addrPostalCode\":null},\"eventLocationMapLink\":\"fakelink1\"}"
+				},
+				"url": {
+					"raw": "https://localhost:8443/api/event",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"event"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get event by id",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f8ccede2-10dd-4573-8727-a0b7e84c4537",
+						"exec": [
+							"pm.test(\"search by ID : returns correct event\", function () {",
+							"    var jsonbodydata = pm.response.json();",
+							"    pm.expect(jsonbodydata.eventTitle).to.eql(\"fakeevent1\");",
+							"",
+							"    // if you want to access an array then use ",
+							"    // (jsonbodydata.eventTitle[0].propname).to.eql(\"fakeevent1\");",
+							"",
+							"});",
+							"",
+							"pm.test(\"search event by ID : returns correct eventtype\"), function(){",
+							"    var jsonbodydata = pm.response.json;",
+							"    pm.expect(jsonbodydata.eventType).to.eql(\"BIRTHDAAY\");",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://localhost:8443/api/event/c1413b13-7902-46f8-941d-b2e4a307fa55",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"event",
+						"c1413b13-7902-46f8-941d-b2e4a307fa55"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
