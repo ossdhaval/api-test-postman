@@ -59,10 +59,13 @@
 					"raw": "{\"eventId\":\"c1413b13-7902-46f8-941d-b2e4a307fa55\",\"eventType\":\"BIRTHDAY\",\"eventTitle\":\"fakeevent1\",\"eventWishlists\":[\"f413d5c4-33a8-48a8-a064-a34e937a51e5\",\"0935cdc7-4d34-4185-83ec-5ab786dd7130\"],\"eventForPerson\":\"fakedhaval1\",\"eventLocationAddress\":{\"addrNameOrNumber\":\"fakeaddress1\",\"addrStreetOrLocality\":null,\"addrLandMark\":null,\"addrCity\":null,\"addrPostalCode\":null},\"eventLocationMapLink\":\"fakelink1\"}"
 				},
 				"url": {
-					"raw": "https://localhost:8443/api/event",
+					"raw": "https://172.17.0.1:8443/api/event",
 					"protocol": "https",
 					"host": [
-						"localhost"
+						"172",
+						"17",
+						"0",
+						"1"
 					],
 					"port": "8443",
 					"path": [
@@ -79,7 +82,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "f8ccede2-10dd-4573-8727-a0b7e84c4537",
+						"id": "c4a6003a-9d5d-4c64-b827-f4e983e4ba3e",
 						"exec": [
 							"pm.test(\"search by ID : returns correct event\", function () {",
 							"    var jsonbodydata = pm.response.json();",
@@ -92,7 +95,7 @@
 							"",
 							"pm.test(\"search event by ID : returns correct eventtype\"), function(){",
 							"    var jsonbodydata = pm.response.json;",
-							"    pm.expect(jsonbodydata.eventType).to.eql(\"BIRTHDAAY\");",
+							"    pm.expect(jsonbodydata.eventType).to.eql(\"BIRTHDAY\");",
 							"}"
 						],
 						"type": "text/javascript"
@@ -103,10 +106,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://localhost:8443/api/event/c1413b13-7902-46f8-941d-b2e4a307fa55",
+					"raw": "https://172.17.0.1:8443/api/event/c1413b13-7902-46f8-941d-b2e4a307fa55",
 					"protocol": "https",
 					"host": [
-						"localhost"
+						"172",
+						"17",
+						"0",
+						"1"
 					],
 					"port": "8443",
 					"path": [
