@@ -26,11 +26,11 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://127.0.0.1:8443/api/isready",
+					"raw": "https://172.17.0.1:8443/api/isready",
 					"protocol": "https",
 					"host": [
-						"127",
-						"0",
+						"172",
+						"17",
 						"0",
 						"1"
 					],
