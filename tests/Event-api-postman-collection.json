@@ -26,10 +26,13 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://localhost:8443/api/isready",
+					"raw": "https://127.0.0.1:8443/api/isready",
 					"protocol": "https",
 					"host": [
-						"localhost"
+						"127",
+						"0",
+						"0",
+						"1"
 					],
 					"port": "8443",
 					"path": [
