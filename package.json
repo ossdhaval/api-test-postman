@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "gsg-event-service-integ-tests": "newman run tests/Event-api-postman-collection.json -k --reporters cli,junit --reporter-junit-export newman.xml"
+    "gsg-event-service-integ-tests": "newman run tests/Event-api-postman-collection.json -k --reporters cli,junit --reporter-junit-export newman.xml",
+    "department-integ-tests": "newman run tests/test-department-collection-postman-collection.json -k --reporters cli,junit --reporter-junit-export newman.xml"
   },
   "author": "",
   "license": "ISC",
